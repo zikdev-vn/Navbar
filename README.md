@@ -137,3 +137,28 @@ hamburger.onclick = function() {
 };
 ```
 
+# Background animation
+
+
+## html
+
+```bash
+<div class='div'></div> 
+```
+
+## css
+
+```bash
+.div{
+  background-size: 100% 100% ;
+  box-shadow: 20px 20px 10px gray ;
+  animation: slider 10s linear infinte;
+}
+
+.@keyframes sider{
+  0%{background-image:url();},
+  30%{background-image:url();},
+  60%{background-image:url();},
+  100%{background-image:url();}
+}
+```
