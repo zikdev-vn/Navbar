@@ -3,8 +3,8 @@
 ## HTML
 ```bash
 <header>
-  <div class='logo'> ZIKDEV  </div>
-  <div class-'hamburger'>
+  <div class='logo'> ZIKDEV </div>
+  <div class='hamburger'>
       <div class='line'></div>
       <div class='line'></div>
       <div class='line'></div>
@@ -12,10 +12,10 @@
 
   <nav class='nav-bar'>
       <ul>
-          <li>  <a href='' class='acrive'> HOME </a>  </li>
-          <li>  <a href='' > Portofolio </a>  </li>
-          <li>  <a href='' > Service </a>  </li>
-          <li>  <a href='' > Profile </a>  </li>
+          <li> <a href='' class='active'> HOME </a> </li>
+          <li> <a href=''> Portfolio </a> </li>
+          <li> <a href=''> Service </a> </li>
+          <li> <a href=''> Profile </a> </li>
       </ul>
   </nav>
 </header>
@@ -25,114 +25,104 @@
 
 ```bash
 *, html {
-  pading: 0;
-  margin:0;
-  box-sizing:boder-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Poppins';
-  background-color: #fff ;
-  overfilow-x: hidder ;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
-header{
-  width:100% ;
-  height: 80px ;
-  bacground-color: white ;
-  display: flex ;
-  justify-connent: space-between;
+header {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
   padding: 0 100px;
-  align-items: center ;
-  box-shadow: 0 16px 8px -9px rgba(191, 191, 191,);
+  align-items: center;
+  box-shadow: 0 16px 8px -9px rgba(191, 191, 191, 1);
 }
 
-.logo{
-  font-size:28px;
+.logo {
+  font-size: 28px;
   font-weight: 600;
   color: #0b2447;
 }
 
-.humburer{
-  display:none ;
-  
+.hamburger {
+  display: none;
 }
 
-.nav-bar ul{
+.nav-bar ul {
   display: flex;
-  list-style: none ;
+  list-style: none;
 }
 
-.navbar ul li a{
-  text-decoration: none ;
-  display:block;
+.nav-bar ul li a {
+  text-decoration: none;
+  display: block;
   color: #0B2447;
-  font-size:20px;
+  font-size: 20px;
   padding: 0 5px;
   margin: 0 5px;
   transition: .2s;
 }
 
-.nav-bar ul li a::after{
-  display:block;
-  content: '' ;
+.nav-bar ul li a::after {
+  display: block;
+  content: '';
   border-bottom: 2px solid #a5d7e8;
-  transform: scalex(0);
-  transition: tranform 250ms ease-in-out;
-  
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
 }
 
-.nav-bar ul li a:hover::after{
+.nav-bar ul li a:hover::after {
+  transform: scaleX(1);
   color: #19376d;
 }
 
-@media only screen and (max-width: 900px){
-  .hamburger{
-    display:block;
+@media only screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
     cursor: pointer;
   }
-  .hamburger{
-    width:30px;
-    height:3px;
-    bacground:#0b2447;
-    margin:6px 0;
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #0b2447;
+    margin: 6px 0;
   }
   .nav-bar {
     height: 0;
-    position: absolute ;
+    position: absolute;
     top: 80px;
     left: 0;
-    right: 0 ;
+    right: 0;
     width: 100vw;
-    bacground-color:white ;
-    box-shadow: 0 16px 8px -9px rgba(191 191 191 191) ;
+    background-color: white;
+    box-shadow: 0 16px 8px -9px rgba(191, 191, 191, 1);
     transition: 0.5s;
     overflow: hidden;
-    
   }
-  .nav-bar .active{
-    height: 450px:
+  .nav-bar.active {
+    height: 450px;
   }
-
-  .nav-bar ul{
-    display:block;
-    width:fit-content;
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
     margin: 80px auto 0 auto;
     text-align: center;
     transition: 0.5s;
     opacity: 1;
   }
-  .nav-bar .active ul {
-    opacity: 0 ;
-  }
-
   .nav-bar ul li a {
-    margin-bottom: 12px
+    margin-bottom: 12px;
   }
-
 }
-
-
 ```
 
 
@@ -140,9 +130,10 @@ header{
 ## Javascript
 
 ```bash
-hamburger = document.querySelector('.humburger');
-humburger.onclick = function(){
-  navbar = document.querySelector('.nav-bar')
-  navbar.classList.toggle('active')
+const hamburger = document.querySelector('.hamburger');
+hamburger.onclick = function() {
+  const navbar = document.querySelector('.nav-bar');
+  navbar.classList.toggle('active');
+};
 ```
 
