@@ -162,3 +162,27 @@ hamburger.onclick = function() {
   100%{background-image:url();}
 }
 ```
+## emojis
+```
+let myemojis = [
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+]
+
+let urlAnimate =() => {
+  window.location.hash = 
+    myemojis[Math.floor((Date.now() / 100 ) % myemojis.length)];
+  setTimeout(urlAnimate, 70);
+  
+};
+
+urlAnimate();
+
+
+```
